@@ -243,8 +243,7 @@ export class OnboardingManager {
       title: "Step 3.5 · Touch",
       text: `
         <div class="shepherd-text">
-          <p>Draw another polygon <strong>touching</strong> the other/s.</p>
-          <p>and double-click to cut!</p>
+          <p>Draw another polygon <strong>touching</strong> the other(s).</p>
         </div>
       `,
       attachTo: {
@@ -312,7 +311,6 @@ export class OnboardingManager {
       text: `
         <div class="shepherd-text">
           <p>You can now draw, split, and merge like a Boolean wizard.</p>
-          <p>Replay anytime via Help → Tutorial.</p>
         </div>
       `,
       attachTo: {
