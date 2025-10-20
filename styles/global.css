@@ -25,7 +25,7 @@
 }
 
 .pen {
-  cursor: url('pen.svg'), auto;
+  cursor: url("pen.svg"), auto;
 }
 
 .no-highlight {
@@ -42,12 +42,12 @@
 }
 
 .bg-dots {
- background-color: #ffffff;
+  background-color: #ffffff;
   background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-.toolbar-container{
+.toolbar-container {
   background: white;
   border-radius: 12px;
   padding: 0.75rem 1.5rem;
@@ -55,4 +55,45 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.fill-text-smooth {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: transparent;
+  -webkit-text-stroke: 2px #93c5fd;
+  text-stroke: 2px #93c5fd;
+}
+
+.fill-text-smooth::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  color: #93c5fd;
+  -webkit-text-stroke: 2px #93c5fd;
+  text-stroke: 2px #93c5fd;
+  overflow: hidden;
+  animation: smoothFill 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes smoothFill {
+  0%,
+  100% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .fill-text-smooth {
+    font-size: 2rem;
+  }
 }
