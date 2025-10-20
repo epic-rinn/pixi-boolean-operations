@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <meta name="robots" content="noindex,follow" />
-    <title>PIXI Boolean Operations</title>
-  </head>
-  <body>
-    <div class="px-5 xl:px-0">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="robots" content="noindex,follow" />
+  <title>Pixi.js Boolean Operations</title>
+  <link rel="stylesheet" href="../styles/global.css" />
+</head>
+
+<body>
+  <main class="w-full min-h-screen flex flex-col items-center justify-center">
+    <div class="px-5 xl:px-0 w-full">
       <h1 class="text-3xl font-bold text-center py-10 text-red-500">
-        PIXI Boolean Operations!
+        PIXI.js Boolean Operations!
       </h1>
-      <div class="w-full h-full pt-20 pb-6 relative">
-        <div
-          class="canvas-container w-[min(100%,800px)] mx-auto border-2 border-black/20 border-dashed"
-        ></div>
+      <div class="w-full h-full pb-6 relative">
+        <div class="bg-dots canvas-container w-[min(100%,1360px)] mx-auto border-2 border-[#ededed] rounded-lg">
+        </div>
         <div class='text-red-500 text-sm font-medium text-center absolute left-3 top-5 w-full' id="error-container">
-        </div> 
+        </div>
       </div>
     </div>
-    <div class="flex justify-center items-center gap-4 [&>.active]:bg-blue-400 [&>button]:rounded-full [&>button]:block [&>button]:px-4 [&>.active]:text-white [&>button]:py-1 font-bold text-sm [&>button:not(.active)]:border-2">
+    <div
+      class="flex toolbar-container justify-center items-center gap-4 [&>.active]:bg-[#3b82f6] [&>button]:rounded-full [&>button]:block [&>button]:px-4 [&>.active]:text-white [&>button]:py-1 font-bold text-sm [&>button:not(.active)]:border-2">
       <button id="select" class="tool active">Select</button>
       <button id="pen" class="tool">Pen</button>
       <button id="split" class="tool">Split</button>
       <button id="merge" class="tool">Merge</button>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  </main>
+  <!-- It must be defered to load the pixi app after the DOM is loaded -->
+  <script defer type="module" src="/src/main.js"></script>
+</body>
+
 </html>

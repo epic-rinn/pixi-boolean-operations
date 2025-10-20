@@ -1,4 +1,3 @@
-import "../styles/global.css";
 import { initApplication } from "./pixi";
 import { handleError } from "./pixi/errors";
 import { bindModeEvents } from "./pixi/modes";
