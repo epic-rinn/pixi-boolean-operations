@@ -1,12 +1,22 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
+  '@floating-ui/dom':
+    specifier: ^1.7.4
+    version: 1.7.4
   pixi.js-legacy:
     specifier: ^7.3.1
     version: 7.3.1(@pixi/core@7.3.1)(@pixi/display@7.3.1)(@pixi/extract@7.3.1)(@pixi/graphics@7.3.1)(@pixi/mesh-extras@7.3.1)(@pixi/mesh@7.3.1)(@pixi/particle-container@7.3.1)(@pixi/prepare@7.3.1)(@pixi/sprite-tiling@7.3.1)(@pixi/sprite@7.3.1)(@pixi/text@7.3.1)(@pixi/utils@7.3.1)
   polybooljs:
     specifier: ^1.2.0
     version: 1.2.0
+  shepherd.js:
+    specifier: ^11.2.0
+    version: 11.2.0
 
 devDependencies:
   autoprefixer:
@@ -226,6 +236,23 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@floating-ui/core@1.7.3:
+    resolution: {integrity: sha512-sGnvb5dmrJaKEZ+LDIpguvdX3bDlEllmv4/ClQ9awcmCZrlx5jQyyMWFM5kBI+EyNOCDDiKk8il0zeuX3Zlg/w==}
+    dependencies:
+      '@floating-ui/utils': 0.2.10
+    dev: false
+
+  /@floating-ui/dom@1.7.4:
+    resolution: {integrity: sha512-OOchDgh4F2CchOX94cRVqhvy7b3AFb+/rQXyswmzmGakRfkMgoWVjfnLWkRirfLEfuD4ysVW16eXzwt3jHIzKA==}
+    dependencies:
+      '@floating-ui/core': 1.7.3
+      '@floating-ui/utils': 0.2.10
+    dev: false
+
+  /@floating-ui/utils@0.2.10:
+    resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -877,6 +904,11 @@ packages:
     hasBin: true
     dev: true
 
+  /deepmerge@4.3.1:
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
     dev: true
@@ -1373,6 +1405,14 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
     dev: true
+
+  /shepherd.js@11.2.0:
+    resolution: {integrity: sha512-2hbz3N7GuuTjI7y3sfnoqKnH0cNhExx67IJtCTGQI2KhBEyvegsDYW5qjj5BlvvVtQjmL/O/J1GQEciwfoZWpw==}
+    engines: {node: 16.* || >= 18}
+    dependencies:
+      '@floating-ui/dom': 1.7.4
+      deepmerge: 4.3.1
+    dev: false
 
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}

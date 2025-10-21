@@ -1,0 +1,264 @@
+/* Shepherd.js Custom Theme - Figma-like Design */
+
+/* Import Shepherd.js base styles */
+@import "shepherd.js/dist/css/shepherd.css";
+
+/* Custom theme styles */
+.shepherd-modal-overlay-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.shepherd-element {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 320px;
+  padding: 0;
+}
+
+.shepherd-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px 12px 0 0;
+  color: white;
+  padding: 16px 20px 12px;
+  position: relative;
+}
+
+.shepherd-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.shepherd-cancel-icon {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.shepherd-cancel-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.shepherd-text {
+  padding: 20px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.shepherd-text > .shepherd-text {
+  padding: 0px;
+}
+
+.shepherd-text p {
+  margin: 0 0 12px 0;
+}
+
+.shepherd-text p:last-child {
+  margin-bottom: 0;
+}
+
+.shepherd-steps-list {
+  margin: 16px 0 0 0;
+}
+
+.shepherd-step-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 6px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.shepherd-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.shepherd-button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shepherd-button-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.shepherd-button-primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.shepherd-button-secondary {
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.shepherd-button-secondary:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Highlight effect for elements */
+.shepherd-highlight {
+  position: relative;
+  z-index: 9998; /* Lower than shepherd modal */
+}
+
+.shepherd-highlight::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: transparent;
+  border-radius: 12px;
+  animation: shepherd-pulse 2s infinite;
+  pointer-events: none;
+  z-index: -1; /* Behind the button */
+}
+
+@keyframes shepherd-pulse {
+  0% {
+    border-color: #3b82f6;
+    transform: scale(1);
+  }
+  50% {
+    border-color: #60a5fa;
+    transform: scale(1.02);
+  }
+  100% {
+    border-color: #3b82f6;
+    transform: scale(1);
+  }
+}
+
+/* Canvas hint styles */
+.shepherd-canvas-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f2937;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 1000;
+  animation: shepherd-hint-fade-in 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes shepherd-hint-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Confetti effect */
+.shepherd-confetti {
+  position: relative;
+  overflow: hidden;
+}
+
+.shepherd-confetti::after {
+  content: "🎉";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  animation: shepherd-confetti-bounce 1s ease-out;
+  pointer-events: none;
+}
+
+@keyframes shepherd-confetti-bounce {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .shepherd-element {
+    max-width: 280px;
+    margin: 0 16px;
+  }
+
+  .shepherd-text {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .shepherd-footer {
+    padding: 12px 16px;
+  }
+
+  .shepherd-canvas-hint {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .shepherd-highlight::before,
+  .shepherd-canvas-hint,
+  .shepherd-confetti::after {
+    animation: none;
+  }
+
+  .shepherd-button:hover {
+    transform: none;
+  }
+}

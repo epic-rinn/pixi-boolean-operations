@@ -63,9 +63,10 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: transparent;
+  color: white;
   -webkit-text-stroke: 2px #93c5fd;
   text-stroke: 2px #93c5fd;
+  paint-order: stroke fill;
 }
 
 .fill-text-smooth::before {
@@ -79,16 +80,16 @@
   -webkit-text-stroke: 2px #93c5fd;
   text-stroke: 2px #93c5fd;
   overflow: hidden;
-  animation: smoothFill 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: smoothFill 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes smoothFill {
   0%,
   100% {
-    height: 0%;
+    height: 100%;
   }
   50% {
-    height: 100%;
+    height: 0%;
   }
 }
 
